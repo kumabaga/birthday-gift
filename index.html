@@ -18,26 +18,48 @@
 
         <p>มีของขวัญเล็ก ๆ อยากมอบให้คุณ ❤️</p>
 
+        <!-- 🎁 กล่องของขวัญ -->
         <div class="gift" id="openGift">
             <div class="gift-lid"></div>
             <div class="gift-box"></div>
             <div class="gift-ribbon"></div>
         </div>
 
-        <p class="click-text">คลิกที่กล่องของขวัญ 🎁</p>
+        <p class="click-text">
+            คลิกที่กล่องของขวัญ 🎁
+        </p>
 
+        <!-- 💌 ข้อความ / การ์ด -->
         <div class="message" id="message">
 
             <div class="card">
 
+                <!-- หน้าการ์ด -->
                 <div class="card-front">
+
                     💌
+
                     <h2>Happy Birthday</h2>
+
+                    <p>
+                        คลิกเพื่อเปิดการ์ด ❤️
+                    </p>
+
                 </div>
 
+                <!-- ด้านในการ์ด -->
                 <div class="card-content">
 
-                    <h2>สุขสันต์วันเกิดนะ 🎂❤️</h2>
+                    <h2>
+                        สุขสันต์วันเกิดนะ 🎂❤️
+                    </h2>
+
+                    <!-- 📸 รูปภาพ -->
+                    <img
+                        src="photo.jpg"
+                        class="birthday-photo"
+                        alt="Birthday Photo"
+                    >
 
                     <p>
                         ขอให้วันนี้เป็นวันที่เต็มไปด้วยความสุข
@@ -52,6 +74,11 @@
                         ด้วยความรัก ❤️
                     </div>
 
+                    <!-- 🎵 ปุ่มเพลง -->
+                    <button id="musicButton">
+                        🎵 เปิดเพลง
+                    </button>
+
                 </div>
 
             </div>
@@ -59,6 +86,11 @@
         </div>
 
     </div>
+
+    <!-- 🎵 เพลง -->
+    <audio id="birthdayMusic" loop>
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="script.js"></script>
 

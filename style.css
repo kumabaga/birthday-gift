@@ -6,7 +6,6 @@
 
 body {
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,9 +41,7 @@ body {
 
 h1 {
     font-size: 48px;
-
     color: #ff4f81;
-
     margin-bottom: 20px;
 
     animation:
@@ -53,15 +50,12 @@ h1 {
 
 p {
     font-size: 20px;
-
     color: #555;
-
     margin-bottom: 30px;
 }
 
-/* =========================
-   Gift Box
-========================= */
+
+/* 🎁 กล่อง */
 
 .gift {
     position: relative;
@@ -135,13 +129,11 @@ p {
 
 .click-text {
     font-size: 16px;
-
     color: #777;
 }
 
-/* =========================
-   Message
-========================= */
+
+/* 💌 การ์ด */
 
 .message {
     display: none;
@@ -155,15 +147,11 @@ p {
     display: block;
 }
 
-/* =========================
-   3D Birthday Card
-========================= */
-
 .card {
     position: relative;
 
     width: 320px;
-    min-height: 360px;
+    min-height: 450px;
 
     margin: 20px auto;
 
@@ -181,6 +169,7 @@ p {
     animation:
         cardAppear 1s ease;
 }
+
 
 /* หน้าการ์ด */
 
@@ -227,16 +216,25 @@ p {
     color: white;
 }
 
-/* ด้านในของการ์ด */
+.card-front p {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color: white;
+}
+
+
+/* ด้านในการ์ด */
 
 .card-content {
     position: relative;
 
     z-index: 1;
 
-    min-height: 360px;
+    min-height: 450px;
 
-    padding: 35px 20px;
+    padding: 30px 20px;
 
     background: white;
 
@@ -248,19 +246,41 @@ p {
 
     font-size: 25px;
 
-    margin-bottom: 20px;
-}
-
-.card-content p {
-    font-size: 17px;
-
-    line-height: 1.7;
-
     margin-bottom: 15px;
 }
 
+.card-content p {
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+}
+
+
+/* 📸 รูปภาพ */
+
+.birthday-photo {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    margin: 5px auto 15px;
+
+    display: block;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ❤️ ลายเซ็น */
+
 .signature {
-    margin-top: 25px;
+    margin-top: 15px;
 
     color: #ff4f81;
 
@@ -269,18 +289,43 @@ p {
     font-weight: bold;
 }
 
-/* =========================
-   เปิดการ์ด 3D
-========================= */
+
+/* 🎵 ปุ่มเพลง */
+
+#musicButton {
+    margin-top: 15px;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    font-size: 16px;
+
+    color: white;
+
+    background: #ff4f81;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#musicButton:hover {
+    transform: scale(1.08);
+}
+
+
+/* เปิดการ์ด */
 
 .card.open .card-front {
     transform:
         rotateY(-150deg);
 }
 
-/* =========================
-   Animations
-========================= */
+
+/* ✨ Animation */
 
 @keyframes appear {
 
@@ -331,9 +376,9 @@ p {
             scale(1);
     }
 }
-/* =========================
-   Mobile Responsive
-========================= */
+
+
+/* 📱 มือถือ */
 
 @media (max-width: 600px) {
 
@@ -349,51 +394,28 @@ p {
         max-width: 400px;
 
         padding: 30px 15px;
-
-        border-radius: 20px;
     }
 
     h1 {
         font-size: 34px;
-        margin-bottom: 15px;
-    }
-
-    .container > p {
-        font-size: 17px;
-    }
-
-    .gift {
-        transform: scale(0.9);
-        margin: 20px auto 10px;
-    }
-
-    .gift:hover {
-        transform: scale(0.9);
-    }
-
-    .message {
-        width: 100%;
     }
 
     .card {
         width: 100%;
         max-width: 300px;
-        min-height: 330px;
 
-        margin: 15px auto;
-    }
-
-    .card-front {
-        font-size: 50px;
-    }
-
-    .card-front h2 {
-        font-size: 24px;
+        min-height: 420px;
     }
 
     .card-content {
-        min-height: 330px;
+        min-height: 420px;
+
         padding: 25px 15px;
+    }
+
+    .birthday-photo {
+        width: 150px;
+        height: 150px;
     }
 
     .card-content h2 {
@@ -402,11 +424,5 @@ p {
 
     .card-content p {
         font-size: 15px;
-        line-height: 1.6;
     }
-
-    .signature {
-        font-size: 16px;
-    }
-
 }
