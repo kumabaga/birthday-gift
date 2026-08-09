@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ff9a9e,
+        #fad0c4
+    );
+
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    padding: 50px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+
+    animation: appear 1.5s ease;
+}
+
+h1 {
+    font-size: 48px;
+
+    color: #ff4f81;
+
+    margin-bottom: 20px;
+
+    animation:
+        floating 2s ease-in-out infinite;
+}
+
+p {
+    font-size: 20px;
+
+    color: #555;
+
+    margin-bottom: 30px;
+}
+
+/* =========================
+   Gift Box
+========================= */
+
+.gift {
+    position: relative;
+
+    width: 150px;
+    height: 130px;
+
+    margin: 30px auto 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.gift:hover {
+    transform: scale(1.08);
+}
+
+.gift-box {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 150px;
+    height: 100px;
+
+    background: #ff4f81;
+
+    border-radius: 8px;
+}
+
+.gift-lid {
+    position: absolute;
+
+    top: 20px;
+    left: -8px;
+
+    width: 166px;
+    height: 35px;
+
+    background: #ff3366;
+
+    border-radius: 8px;
+
+    z-index: 2;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.gift-ribbon {
+    position: absolute;
+
+    left: 65px;
+    top: 20px;
+
+    width: 20px;
+    height: 110px;
+
+    background: #ffd700;
+
+    z-index: 3;
+}
+
+.gift.open .gift-lid {
+    transform:
+        translateY(-60px)
+        rotate(-8deg);
+}
+
+.click-text {
+    font-size: 16px;
+
+    color: #777;
+}
+
+/* =========================
+   Message
+========================= */
+
+.message {
+    display: none;
+
+    margin-top: 30px;
+
+    animation: appear 1s ease;
+}
+
+.message.show {
+    display: block;
+}
+
+/* =========================
+   3D Birthday Card
+========================= */
+
+.card {
+    position: relative;
+
+    width: 320px;
+    min-height: 360px;
+
+    margin: 20px auto;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    perspective: 1000px;
+
+    animation:
+        cardAppear 1s ease;
+}
+
+/* หน้าการ์ด */
+
+.card-front {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #ff6b9a,
+        #ff9fb9
+    );
+
+    color: white;
+
+    font-size: 60px;
+
+    cursor: pointer;
+
+    transform-origin: left center;
+
+    transition:
+        transform 1s ease;
+
+    backface-visibility: hidden;
+}
+
+.card-front h2 {
+    margin-top: 15px;
+
+    font-size: 28px;
+
+    color: white;
+}
+
+/* ด้านในของการ์ด */
+
+.card-content {
+    position: relative;
+
+    z-index: 1;
+
+    min-height: 360px;
+
+    padding: 35px 20px;
+
+    background: white;
+
+    color: #555;
+}
+
+.card-content h2 {
+    color: #ff4f81;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.card-content p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+.signature {
+    margin-top: 25px;
+
+    color: #ff4f81;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+/* =========================
+   เปิดการ์ด 3D
+========================= */
+
+.card.open .card-front {
+    transform:
+        rotateY(-150deg);
+}
+
+/* =========================
+   Animations
+========================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-10px);
+    }
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(80px)
+            scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 400px;
+
+        padding: 30px 15px;
+
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+        margin-bottom: 15px;
+    }
+
+    .container > p {
+        font-size: 17px;
+    }
+
+    .gift {
+        transform: scale(0.9);
+        margin: 20px auto 10px;
+    }
+
+    .gift:hover {
+        transform: scale(0.9);
+    }
+
+    .message {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        min-height: 330px;
+
+        margin: 15px auto;
+    }
+
+    .card-front {
+        font-size: 50px;
+    }
+
+    .card-front h2 {
+        font-size: 24px;
+    }
+
+    .card-content {
+        min-height: 330px;
+        padding: 25px 15px;
+    }
+
+    .card-content h2 {
+        font-size: 21px;
+    }
+
+    .card-content p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .signature {
+        font-size: 16px;
+    }
+
+}
